@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
 
 class App extends Component {
 
@@ -26,15 +26,38 @@ class App extends Component {
   render() {
 
     const bones = this.state.bones.map(bone => (
-      <li>
+      <div>
+        <li>
         {bone.material}
-      </li>
+        </li>
+        {bone.slashs_notes}
+      </div>
+      
     ))
     return (
       <div className="App">
+      <h1>Astrid's bone list</h1>
         <ul>
           {bones}
         </ul>
+      <h1>Make Astrid happy and create a new bone</h1>
+      <div>
+        <p>Material</p>
+        <input type="text"></input>
+      </div>
+      <div>
+        <p>What dog think about it</p>
+        <input type="text"></input>
+      </div>
+      <div>
+        <p>Age</p>
+        <input type="text"></input>
+      </div>
+      <div>
+        <p>Size</p>
+      <input type="text"></input>
+      </div>
+      <button type="button">Save bone</button>
       </div>
     );
   }
