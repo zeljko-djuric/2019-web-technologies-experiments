@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   updateAge = (event) => {
-    this.setState({age: event.targe.value})
+    this.setState({age: event.target.value})
   }
 
   updateSize = (event) => {
@@ -44,7 +44,28 @@ class App extends Component {
   }
 
   saveBone = () =>{
+
+    fetch('https://slashtheapidog.com/api/bones/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "age": this.state.age,
+        "material": this.state.material,
+        "size":this.state.size,
+        "remainder": "80%",
+        "slashs_notes": this.state.description
+      })
+    }).then(function(response) {
+      console.log(response.status)
+    })
+    
     console.log('test')
+    console.log(this.state.material)
+    console.log(this.state.description)
+    console.log(this.state.size)
+    console.log(this.state.age)
   }
 
   render() {
@@ -61,7 +82,7 @@ class App extends Component {
     
     return (
       <div className="App">
-      <h1>Astrid's bone list</h1>
+      <h1>Astrid bone list</h1>
         <ul>
           {bones}
         </ul>
