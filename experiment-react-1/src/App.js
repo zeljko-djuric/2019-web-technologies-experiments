@@ -27,21 +27,25 @@ class App extends Component {
       }))
   }
 
-  updateMaterial = (event) => {
-    this.setState({material: event.target.value})
+  handleUpdate = (event) =>{
+    this.setState({[event.target.id]: event.target.value})
   }
 
-  updateDescription = (event) => {
-    this.setState({description: event.target.value})
-  }
+  // updateMaterial = (event) => {
+  //   this.setState({material: event.target.value})
+  // }
 
-  updateAge = (event) => {
-    this.setState({age: event.target.value})
-  }
+  // updateDescription = (event) => {
+  //   this.setState({description: event.target.value})
+  // }
 
-  updateSize = (event) => {
-    this.setState({size: event.target.value})
-  }
+  // updateAge = (event) => {
+  //   this.setState({age: event.target.value})
+  // }
+
+  // updateSize = (event) => {
+  //   this.setState({size: event.target.value})
+  // }
 
   saveBone = () =>{
 
@@ -60,13 +64,8 @@ class App extends Component {
     }).then(function(response) {
       console.log(response.status)
     })
-    
-    console.log('test')
-    console.log(this.state.material)
-    console.log(this.state.description)
-    console.log(this.state.size)
-    console.log(this.state.age)
   }
+
 
   render() {
 
@@ -89,19 +88,19 @@ class App extends Component {
       <h1>Make Astrid happy and create a new bone</h1>
       <div>
         <p>Material</p>
-        <input type="text" onChange={this.updateMaterial}></input>
+        <input type="text" id="material" onChange={this.handleUpdate}></input>
       </div>
       <div>
         <p>What dog think about it</p>
-        <input type="text" onChange={this.updateDescription}></input>
+        <input type="text" id="description" onChange={this.handleUpdate}></input>
       </div>
       <div>
         <p>Age</p>
-        <input type="text" onChange={this.updateAge}></input>
+        <input type="text" id="age" onChange={this.handleUpdate}></input>
       </div>
       <div>
         <p>Size</p>
-      <input type="text" onChange={this.updateSize}></input>
+      <input type="text" id="size" onChange={this.handleUpdate}></input>
       </div>
       <button type="button" onClick={this.saveBone}>Save bone</button>
       </div>
