@@ -27,27 +27,12 @@ class App extends Component {
       }))
   }
 
-  handleUpdate = (event) =>{
+  handleUpdate = (event) => {
     this.setState({[event.target.id]: event.target.value})
   }
 
-  // updateMaterial = (event) => {
-  //   this.setState({material: event.target.value})
-  // }
 
-  // updateDescription = (event) => {
-  //   this.setState({description: event.target.value})
-  // }
-
-  // updateAge = (event) => {
-  //   this.setState({age: event.target.value})
-  // }
-
-  // updateSize = (event) => {
-  //   this.setState({size: event.target.value})
-  // }
-
-  saveBone = () =>{
+  saveBone = () => {
 
     fetch('https://slashtheapidog.com/api/bones/', {
       method: 'POST',
