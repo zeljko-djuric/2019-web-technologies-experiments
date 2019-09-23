@@ -4,12 +4,15 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Home from './home'
+import Home from './home';
+import Header from './header';
+
 
 class App extends React.Component {
   render() {
     return (
       <View style={styles.appContainer}>
+        <Header title="Random People" />
         <Home />
       </View>
     );
