@@ -20,7 +20,7 @@
     "android": "expo android",
     "ios": "expo ios",
     "build:ios": "expo build:ios",
-    "build:android": "expo build:android",
+    "build:android": "expo build:android"
   },
   "eslintConfig": {
     "extends": "react-app"
